@@ -1,7 +1,7 @@
 import unittest
 from malloc import *
 
-class TestTest(unittest.TestCase):
+class TestMalloc(unittest.TestCase):
 
     def test_mallocReturnsInput(self):
         #Should Pass

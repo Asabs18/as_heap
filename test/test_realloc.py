@@ -1,7 +1,7 @@
 import unittest
 from realloc import *
 
-class TestTest(unittest.TestCase):
+class TestRealloc(unittest.TestCase):
 
     def test_reallocReturnsSecondNumber(self):
         #Should Pass

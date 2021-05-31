@@ -1,7 +1,7 @@
 import unittest
 from free import *
 
-class TestTest(unittest.TestCase):
+class TestFree(unittest.TestCase):
 
     def test_freeReturnsZero(self):
         #Should Pass

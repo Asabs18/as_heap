@@ -1,7 +1,7 @@
 import unittest
 from aligned_alloc import *
 
-class TestTest(unittest.TestCase):
+class TestAlignedAlloc(unittest.TestCase):
 
     def test_alignedAllocReturnsAlignedValue(self):
         #Should Pass
