@@ -1,20 +1,27 @@
 import unittest
 from realloc import *
 
+PLACEHOLDER_HEAP_SIZE = 10000
+definitlyAPointer = []
+
 class TestRealloc(unittest.TestCase):
 
-    def test_reallocReturnsSecondNumber(self):
-        #Should Pass
-        self.assertEqual(realloc(32, 16), 16)
-        self.assertEqual(realloc(5, 32), 32)
+    def test_reallocReturnsPointer(self):
+        self.assertEqual(isinstance(realloc(16, 32), definitlyAPointer), True)
+        self.assertEqual(isinstance(realloc(16, 16), definitlyAPointer), True)
+        self.assertEqual(isinstance(realloc(16, 31), definitlyAPointer), True)
+        self.assertEqual(isinstance(realloc(34, 17), definitlyAPointer), True)
+        self.assertEqual(isinstance(realloc(16, PLACEHOLDER_HEAP_SIZE + 1), definitlyAPointer), True)
 
-        #Should Fail
-        self.assertNotEqual(realloc(7, 32), 7)
-        self.assertNotEqual(realloc(80, 20), 60)
-
-        #Should Throw Exception
+    def test_reallocThrowsException(self):
         self.assertRaises(ValueError, realloc, -10, 0)
         self.assertRaises(ValueError, realloc, 20, -10)
+    
+    def test_reallocReturnsNothingOnFail(self):
+        self.assertEqual(realloc(16, 'Hello'), None)
+        self.assertEqual(realloc(16, 10.5), None)
+        self.assertEqual(realloc(16, True), None)
+        self.assertEqual(realloc(16, definitlyAPointer), None)
 
 if __name__ == '__main__':
     unittest.main()
