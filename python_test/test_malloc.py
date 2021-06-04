@@ -1,4 +1,3 @@
-from logging import PlaceHolder
 import unittest
 from malloc import *
 

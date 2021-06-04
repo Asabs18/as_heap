@@ -13,7 +13,6 @@ class TestAlignedAlloc(unittest.TestCase):
         self.assertEqual(isinstance(aligned_alloc(17), definitlyAPointer), True)
         self.assertEqual(isinstance(aligned_alloc(PLACEHOLDER_HEAP_SIZE + 1), definitlyAPointer), True)
 
-
     def test_alignedAllocThrowsException(self):
         self.assertRaises(ValueError, aligned_alloc, -1)
         self.assertRaises(ValueError, aligned_alloc, 15)
