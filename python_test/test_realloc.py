@@ -12,6 +12,9 @@ class TestRealloc(unittest.TestCase):
         self.assertEqual(isinstance(realloc(16, 31), definitlyAPointer), True)
         self.assertEqual(isinstance(realloc(34, 17), definitlyAPointer), True)
         self.assertEqual(isinstance(realloc(16, PLACEHOLDER_HEAP_SIZE + 1), definitlyAPointer), True)
+
+    def test_test(self):
+        self.assertTrue(True)
         
     
     def test_reallocReturnsNothingOnFail(self):
