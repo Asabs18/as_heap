@@ -7,12 +7,12 @@
 			"command": "cl.exe",
 			"args": [
 				"/Zi",
-				"/I C:\\Users\\aidan\\OneDrive\\Documents\\Work\\Python\\as_heap\\as_heap",
+				"/I..\\..\\as_heap\\as_heap",
 				"/EHsc",
 				"/nologo",
 				"/Fe:",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe",
-				"${file} ..\\..\\..\\C Add Ons\\munit-master\\munit.c"
+				"${workspaceFolder}\\c_test\\main.c",  "..\\..\\munit-master\\munit.c"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
