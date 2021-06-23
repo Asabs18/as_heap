@@ -9,9 +9,13 @@
     "python.testing.pytestEnabled": false,
     "python.testing.nosetestsEnabled": false,
     "python.testing.unittestEnabled": true,
-    "files.associations": {
-        "*.html": "html",
-        "as_heap.h": "c",
-        "mallocchecks.h": "c"
-    }
+    // "files.associations": {
+    //     "*.html": "html",
+    //     "as_heap.h": "c",
+    //     "mallocchecks.h": "c",
+    //     "alignedallocchecks.h": "c",
+    //     "reallocchecks.h": "c",
+    //     "freechecks.h": "c",
+    //     "munit_ex.h": "c"
+    // }
 }
