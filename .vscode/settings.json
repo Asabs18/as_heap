@@ -11,6 +11,7 @@
     "python.testing.unittestEnabled": true,
     "files.associations": {
         "*.html": "html",
-        "as_heap.h": "c"
+        "as_heap.h": "c",
+        "mallocchecks.h": "c"
     }
 }
