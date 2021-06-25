@@ -1,5 +1,7 @@
 #include <assert.h>
 #include "munit_ex.h"
+//include free.h
+
 
 //Command Type correctly returns C command 
 static MunitResult
