@@ -2,13 +2,16 @@
 #include "munit_ex.h"
 //include malloc.h
 
-#define MAXHEAPSIZE = 1000
+#define MAXHEAPSIZE 1000
+void* malloc(size_t bytes){
+	return NULL;
+}
 
 static MunitResult
 mallocReturnsNullOnFail1(const MunitParameter params[], void* data){
 	size_t bytes = 0;
 
-	int output = malloc(bytes);
+	void* output = malloc(bytes);
 
 	munit_assert(output == NULL);
 	return MUNIT_OK;
@@ -18,7 +21,7 @@ static MunitResult
 mallocReturnsNullOnFail2(const MunitParameter params[], void* data){
 	size_t bytes = MAXHEAPSIZE + 1;
 
-	int output = malloc(bytes);
+	void* output = malloc(bytes);
 
 	munit_assert(output == NULL);
 	return MUNIT_OK;
@@ -28,7 +31,7 @@ static MunitResult
 mallocReturnsNullOnFail3(const MunitParameter params[], void* data){
 	size_t bytes = -1;
 
-	int output = malloc(bytes);
+	void* output = malloc(bytes);
 
 	munit_assert(output == NULL);
 	return MUNIT_OK;

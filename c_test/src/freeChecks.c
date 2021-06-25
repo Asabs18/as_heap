@@ -3,7 +3,6 @@
 //include free.h
 
 
-//Command Type correctly returns C command 
 static MunitResult
 testTest(const MunitParameter params[], void* data) {
 	return MUNIT_SKIP;
