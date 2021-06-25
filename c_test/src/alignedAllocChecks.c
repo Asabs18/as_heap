@@ -2,13 +2,17 @@
 #include "munit_ex.h"
 //include aligned_alloc
 
-#define MAXHEAPSIZE = 1000
+#define MAXHEAPSIZE 1000
+void* alignedAlloc(size_t bytes){
+	return NULL;
+}
+
 
 static MunitResult
 alignedAllocReturnsNullOnFail1(const MunitParameter params[], void* data){
 	size_t bytes = 0;
 
-	int output = aligned_alloc(bytes);
+	void* output = alignedAlloc(bytes);
 
 	munit_assert(output == NULL);
 	return MUNIT_OK;
@@ -18,7 +22,7 @@ static MunitResult
 alignedAllocReturnsNullOnFail2(const MunitParameter params[], void* data){
 	size_t bytes = MAXHEAPSIZE + 1;
 
-	int output = aligned_alloc(bytes);
+	void* output = alignedAlloc(bytes);
 
 	munit_assert(output == NULL);
 	return MUNIT_OK;
@@ -28,7 +32,7 @@ static MunitResult
 alignedAllocReturnsNullOnFail3(const MunitParameter params[], void* data){
 	size_t bytes = -1;
 
-	int output = aligned_alloc(bytes);
+	void* output = alignedAlloc(bytes);
 
 	munit_assert(output == NULL);
 	return MUNIT_OK;
