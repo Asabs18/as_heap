@@ -19,7 +19,7 @@
 				"${workspaceFolder}\\c_test\\src\\*.c",  "${workspaceFolder}\\..\\munit-master\\munit.c"
 			],
 			"options": {
-				"cwd": "${fileDirname}"
+				"cwd": "${workspaceFolder}\\c_test\\bin"
 			},
 			"problemMatcher": [
 				"$msCompile"
