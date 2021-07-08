@@ -1,3 +1,3 @@
 #include <stdlib.h>
 
-void* malloc(size_t bytes);
+void* as_malloc(size_t bytes);
