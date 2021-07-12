@@ -7,7 +7,7 @@
 			"command": "cl.exe",
 			"args": [
 				"/Zi",
-				"/I${workspaceFolder}\\as_heap",
+				"/I${workspaceFolder}\\as_heap_c",
 				"/I${workspaceFolder}\\..\\munit-master",
 				"/I${workspaceFolder}\\c_test\\include",
 				"/EHsc",
