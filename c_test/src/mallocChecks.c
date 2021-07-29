@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <stdbool.h>
 #include "munit_ex.h"
 //include malloc.h
 
@@ -8,7 +9,7 @@ void* malloc(size_t bytes){
 }
 
 static MunitResult
-mallocReturnsNullOnFail1(const MunitParameter params[], void* data){
+mallocReturnsNullAllocZero(const MunitParameter params[], void* data){
 	size_t bytes = 0;
 
 	void* output = malloc(bytes);
@@ -18,29 +19,34 @@ mallocReturnsNullOnFail1(const MunitParameter params[], void* data){
 }
 
 static MunitResult
-mallocReturnsNullOnFail2(const MunitParameter params[], void* data){
-	size_t bytes = MAXHEAPSIZE + 1;
+mallocReturnsByteOnAlloc(const MunitParameter params[], void* data){
+	size_t bytes = 1;
 
 	void* output = malloc(bytes);
 
-	munit_assert(output == NULL);
+	munit_assert(sizeof(output) == 1);
 	return MUNIT_OK;
 }
 
 static MunitResult
-mallocReturnsNullOnFail3(const MunitParameter params[], void* data){
-	size_t bytes = -1;
+mallocReturnsCorrectBytes(const MunitParameter params[], void* data){
+	bool fail = false;
 
-	void* output = malloc(bytes);
+	for(int i = 0; i < 500; i++){
+		if(sizeof(malloc(i)) != i){
+			fail = true;
+		}
+	}
 
-	munit_assert(output == NULL);
+	munit_assert(fail == false);
 	return MUNIT_OK;
 }
 
 //declares the test suite to run each test in this file
 MunitTest mallocCheck_tests[] = {
-	munit_ex_register_test(mallocReturnsNullOnFail1, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL),
-	munit_ex_register_test(mallocReturnsNullOnFail2, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL),
-	munit_ex_register_test(mallocReturnsNullOnFail3, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL),
+	munit_ex_register_test(mallocReturnsNullAllocZero, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL),
+	munit_ex_register_test(mallocReturnsByteOnAlloc, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL),
+	munit_ex_register_test(mallocReturnsCorrectBytes, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL),
+
 	{ NULL, NULL, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL }
 };
