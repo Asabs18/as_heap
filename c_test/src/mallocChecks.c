@@ -14,7 +14,7 @@ mallocReturnsNullAllocZero(const MunitParameter params[], void* data){
 
 	void* output = malloc(bytes);
 
-	munit_assert(output == NULL);
+	munit_assert_ptr_null(output);
 	return MUNIT_OK;
 }
 
@@ -24,7 +24,8 @@ mallocReturnsByteOnAlloc(const MunitParameter params[], void* data){
 
 	void* output = malloc(bytes);
 
-	munit_assert(sizeof(output) == 1);
+	munit_assert_ptr_not_null(output);
+	free(output);
 	return MUNIT_OK;
 }
 
@@ -32,10 +33,12 @@ static MunitResult
 mallocReturnsCorrectBytes(const MunitParameter params[], void* data){
 	bool fail = false;
 
+	//try and pass in max index
 	for(int i = 0; i < 500; i++){
 		if(sizeof(malloc(i)) != i){
 			fail = true;
 		}
+		free(i); //can't free i
 	}
 
 	munit_assert(fail == false);
