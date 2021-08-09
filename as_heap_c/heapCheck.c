@@ -6,7 +6,7 @@ bool _isHeapCoalesced(byte_t* heap){
     return true;
 }
 
-checkOutput_t _amountOfInternalFragments(byte_t* heap){
+checkOutput_t _amountOfInternalFragments(void* heap){
     checkOutput_t output = {0, false};
     return output;
 }
@@ -16,7 +16,7 @@ checkOutput_t _amountOfExternalFragments(void* heap){
     return output;
 }
 
-checkOutput_t _checkHeapOverun(byte_t* heap){
+checkOutput_t _checkHeapOverun(void* heap){
     checkOutput_t output = {0, false};
     return output;
 }

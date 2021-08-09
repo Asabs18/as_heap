@@ -4,9 +4,9 @@
 
 typedef unsigned char byte_t; //Change to const void*
 
-typedef enum checkOutputType {internalFragment, externalFragment};
+typedef enum _checkOutputType_e {internalFragment, externalFragment}checkOutputType_e;
 typedef struct checkOutput {
-    checkOutput_t checkOutputType;
+    checkOutputType_e checkOutputType;
     union {
         struct {
             int internalFragments;

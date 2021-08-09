@@ -16,7 +16,8 @@
 				"/Fd${workspaceFolder}\\c_test\\bin\\",
 				"/Fe:",
 				"${workspaceFolder}\\c_test\\bin\\c_test.exe",
-				"${workspaceFolder}\\c_test\\src\\*.c",  "${workspaceFolder}\\..\\munit-master\\munit.c"
+				//TODO: add src/include folder to as_heap_C
+				"${workspaceFolder}\\c_test\\src\\*.c",  "${workspaceFolder}\\..\\munit-master\\munit.c", "${workspaceFolder}\\as_heap_c\\*.c"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}\\c_test\\bin"

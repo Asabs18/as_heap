@@ -1,4 +1,10 @@
 #pragma once
 #include <stdio.h>
 
-void* b_malloc(size_t size);
+void init();
+
+void* malloc(size_t size);
+
+void* realloc(void* ptr, size_t size);
+
+void free();

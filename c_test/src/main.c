@@ -10,12 +10,12 @@
 const MunitSuite as_heapTestSuite[] = {
 	{ munit_ex_register_sub_suite(mallocCheck , NULL) },
 	{ munit_ex_register_sub_suite(freeCheck, NULL) },
-	{ munit_ex_register_sub_suite(alignedAllocCheck, NULL) },
+	//{ munit_ex_register_sub_suite(alignedAllocCheck, NULL) },
 	{ munit_ex_register_sub_suite(reallocCheck, NULL) },
 	{ NULL }
 };
 
-//The root test suite calls the Assembler test suite
+//The root test suite calls the as_heap test suite
 const MunitSuite root_test_suite = {
 	munit_ex_register_empty_sub_suite(as_heap, as_heapTestSuite)
 };

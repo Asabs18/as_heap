@@ -10,12 +10,14 @@
     "python.testing.nosetestsEnabled": false,
     "python.testing.unittestEnabled": true,
     "files.associations": {
+        "*.html": "html",
         "as_heap.h": "c",
         "atomic": "c",
         "tuple": "c",
         "xmemory": "c",
         "xstring": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "munit.h": "c"
     },
     // "files.associations": {
     //     "*.html": "html",
