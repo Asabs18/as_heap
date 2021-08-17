@@ -17,7 +17,8 @@
         "xmemory": "c",
         "xstring": "c",
         "xutility": "c",
-        "munit.h": "c"
+        "munit.h": "c",
+        "bumpalloc.h": "c"
     },
     // "files.associations": {
     //     "*.html": "html",

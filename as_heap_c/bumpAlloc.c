@@ -2,24 +2,31 @@
 #include "bumpAlloc.h"
 
 void* heapPtr = NULL;
-void* startPtr;
-int capacity = 10000000;
+int capacity = 0;
+int delta = 10000000; 
 
 typedef unsigned char byte_t;
 
-void init() {
-    heapPtr = malloc(capacity);
-    startPtr = heapPtr;
+void* _realloc(void* oldPtr, size_t size){
+    realloc(oldPtr, size);
+}
+
+void* _malloc(size_t size){
+    malloc(size);
 }
 
 void* malloc(size_t size){
     void* newPtr = heapPtr;
     if(size <= capacity){
-        heapPtr = (byte_t) heapPtr + size;
+        heapPtr = (byte_t*) heapPtr + size;
+        capacity -= size;
     }
     else{
-        heapPtr = realloc(heapPtr, size+capacity);
-        heapPtr = (byte_t) heapPtr + size;
+        assert(size < capacity);
+        capacity += delta;
+        void* tempPtr = _realloc(heapPtr, capacity); 
+        assert(tempPtr != NULL); 
+        assert(tempPtr == heapPtr);
     }
     return newPtr;
 }
@@ -27,13 +34,13 @@ void* malloc(size_t size){
 void* realloc(void* oldPtr, size_t size){
     void* newPtr = NULL;
     if(size > 0 || oldPtr != NULL){
-        void* newPtr = malloc(size);
+        void* newPtr = _malloc(size);
         memcpy(newPtr, oldPtr, sizeof(&oldPtr));
     }
     return newPtr;
 }
 
-void free(){
-    free(heapPtr);
+void free(void* ptr){
+    return;
 }
 

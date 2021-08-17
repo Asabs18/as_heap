@@ -21,7 +21,7 @@ freeAllFreesMultipleItems(const MunitParameter params[], void* data) {
 	void* ptr2 = malloc(sizeof(int));
 	void* ptr3 = malloc(sizeof(int));
 	
-	free();
+	//free();
 
 	if(ptr1 != NULL || ptr2 != NULL || ptr3 != NULL){
 		fail = true;
@@ -38,7 +38,7 @@ freeAllFreesAnyNumOfItems(const MunitParameter params[], void* data) {
 	}
 	void* ptr = malloc(1);
 
-	free();
+	//free();
 
 	munit_assert_ptr_not_null(ptr);
 	return MUNIT_OK;

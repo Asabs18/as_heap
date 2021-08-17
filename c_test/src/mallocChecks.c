@@ -37,7 +37,7 @@ mallocCalledManyTimes(const MunitParameter params[], void* data){
 			fail = true;
 		}
 	}
-	b_freeAll();
+	//b_freeAll();
 	munit_assert_false(fail);
 	return MUNIT_OK;
 }
@@ -62,7 +62,7 @@ static MunitResult
 mallocFreeThenMallocNotNull(const MunitParameter params[], void* data){
 	size_t size = 10;
 	void* ptr = malloc(size);
-	free();
+	free(ptr);
 	init();
 	ptr = malloc(size);
 
@@ -73,6 +73,7 @@ mallocFreeThenMallocNotNull(const MunitParameter params[], void* data){
 static MunitResult
 mallocTwiceSameSizeNotNull(const MunitParameter params[], void* data){
 	size_t size = 10;
+	
 	void* ptr = malloc(size);
 	ptr = malloc(size);
 

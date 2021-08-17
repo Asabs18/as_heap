@@ -12,7 +12,7 @@ reallocReturnsNullOnFail1(const MunitParameter params[], void* data){
 	void* output = realloc(oldPtr, newBytes);
 
 	munit_assert_ptr_null(output);
-	free();
+	//free();
 	return MUNIT_OK;
 }
 
@@ -24,7 +24,7 @@ reallocReturnsNullOnFail2(const MunitParameter params[], void* data){
 	void* output = realloc(oldPtr, newBytes);
 
 	munit_assert(output == NULL);
-	free();
+	//free();
 	return MUNIT_OK;
 }
 
@@ -36,7 +36,7 @@ reallocGrowsHeap(const MunitParameter params[], void* data){
 	void* output = realloc(oldPtr, newBytes);
 
 	munit_assert_ptr_not_null(output);
-	free();
+	//free();
 	return MUNIT_OK;
 }
 
@@ -49,7 +49,7 @@ reallocReturnsNotNullOnSuccess(const MunitParameter params[], void* data){
 	void* output = realloc(oldPtr, newBytes);
 
 	munit_assert_ptr_not_null(output);
-	free();
+	//free();
 	return MUNIT_OK;
 }
 
@@ -65,7 +65,7 @@ reallocWorksMultipleTimes(const MunitParameter params[], void* data){
 	output = realloc(output, newBytes);
 
 	munit_assert_ptr_not_null(output);
-	free();
+	//free();
 	return MUNIT_OK;
 }
 
