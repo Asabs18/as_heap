@@ -3,7 +3,7 @@
 #include "mallocChecks.h"
 #include "reallocChecks.h"
 #include "freeChecks.h"
-#include "alignedAllocChecks.h"
+//#include "alignedAllocChecks.h"
 
 ///main file for unit testing in c///
 

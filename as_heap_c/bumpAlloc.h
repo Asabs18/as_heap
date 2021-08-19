@@ -1,10 +1,8 @@
 #pragma once
 #include <stdio.h>
 
-void init();
+void* asBumpMalloc(size_t size);
 
-void* malloc(size_t size);
+void* asBumpRealloc(void* ptr, size_t size);
 
-void* realloc(void* ptr, size_t size);
-
-void free(void* ptr);
+void asBumpFree(void* ptr);

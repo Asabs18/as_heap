@@ -18,7 +18,10 @@
         "xstring": "c",
         "xutility": "c",
         "munit.h": "c",
-        "bumpalloc.h": "c"
+        "bumpalloc.h": "c",
+        "mallocchecks.h": "c",
+        "reallocchecks.h": "c",
+        "BINDING.H": "cpp"
     },
     // "files.associations": {
     //     "*.html": "html",
