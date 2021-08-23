@@ -21,7 +21,7 @@ mallocReturnsByteOnAlloc(const MunitParameter params[], void* data){
 	void* output = mallocSUT(bytes);
 
 	munit_assert_ptr_not_null(output);
-	free(output);
+	freeSUT(output);
 	return MUNIT_OK;
 }
 
@@ -54,7 +54,7 @@ mallocCallAndFreeManyTimes(const MunitParameter params[], void* data){
 			fail = true;
 			break;
 		}
-		free(ptr);	
+		freeSUT(ptr);	
 	}
 	munit_assert_false(fail);
 	return MUNIT_OK;
@@ -64,7 +64,7 @@ static MunitResult
 mallocFreeThenMallocNotNull(const MunitParameter params[], void* data){
 	size_t size = 10;
 	void* ptr = mallocSUT(size);
-	free(ptr);
+	freeSUT(ptr);
 	ptr = mallocSUT(size);
 
 	munit_assert_ptr_not_null(ptr);
